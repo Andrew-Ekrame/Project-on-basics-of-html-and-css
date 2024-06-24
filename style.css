@@ -1,3 +1,283 @@
-html {
-  background-color: whitesmoke;
+* {
+  margin: 0;
+  padding: 0;
 }
+body {
+  color: #444;
+  font-family: sans-serif;
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+nav {
+  font-size: 18px;
+}
+.post-header {
+  margin-bottom: 40px;
+}
+article {
+  margin-bottom: 60px;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  position: relative;
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+#copyright {
+  font-size: 16px;
+}
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+.related-posts {
+  list-style: none;
+}
+li:first-child {
+  font-weight: bold;
+}
+li:last-child {
+  font-style: italic;
+}
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  color: #1098ad;
+}
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+.post-img {
+  width: 100%;
+}
+.post-author {
+  width: 50px;
+}
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+nav a:link:last-child {
+  margin-right: 0px;
+}
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+button::first-letter {
+  color: red;
+}
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+h3 + p::first-line {
+  color: red;
+}
+h2::after {
+  content: "TOP";
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ffe70e;
+  color: #444;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  right: -25px;
+  top: -15px;
+}
+/*
+styling text
+------------
+1-font size:in px,rem,.... [better with a size system]
+2-font family:type of font sans,sans-serif,.... {can take multivaule}
+3-text transform:editing text uppercase,lowercase,....
+4-color:color of text
+5-font style:styling text italic,.....
+6-line height:vertical space between lines takes no units just the number
+7-text align:align text to right,center,left
+8-font weight:to make text bold
+9-letter spacing:space between letter in px,rem,...
+*/
+/*
+styling list
+------------
+1-list style:to change the style of list bullets,none,....
+*/
+/*
+colors
+------
+1-rgb:using rgb(v1,v2,v3) function for 0<=v(i)<=255 just for color
+2-hexadecimal:using the hexa code of a color
+3-rgba:using rgba(v1,v2,v3,v4) function for 0<=v1,v2,v3<=255 for the color value and v4 is the alpha value 0<=v4<=1 for transparency
+*/
+/*
+pseudo classes
+--------------
+used to select items in html
+like tag:first-child chooses the first item like that tag in every other tag
+as if it searches for its first occurrences
+*/
+/*
+styling links
+-------------
+we style links by pseudo classes to target their different states and in this exact order from 2 to 5
+1-a :normal text styling
+2-a:link : its normal state as just a text but needs an href attribute
+3-a:visited :a link is clicked before
+4-a:hover :when the mouse is hovering on the link
+5-a:active :when the mouse is clicking on the link
+
+properties used with styling links
+1-text decoration: ex remove underline of link
+*/
+/*
+box model
+---------
+every element can be viewed as a box
+box model consists of
+1-content : the actual element with width and height
+2-padding : invisible space between content and border
+3-border : the line that surround the content and padding
+4-margin : invisible space around the borders of element
+5-fill area :area inside the borders(content+padding) the background is filling
+
+how the box model is calculated (default way)
+1-final element width= l border + l padding + width + r padding + r border
+2-final element height= t border + t padding + height + b padding + b border
+
+some properties of box model
+1-padding
+2-margin
+3-width
+4-height
+5-min width
+6-min height
+7-max width
+8-max height
+
+types of boxes
+1-inline:has the block properties but on horizontal directions only not verticaly
+2-inline block:it behaves like inline from outside(with other elements) and behaves as block from inside(with its content)
+3-block:normal block with width,height,(padding,margin) in all directions
+notes
+1-margin collapse: bigger margin eats smaller margin inside it and the biggest is the one applied
+*/
+/*
+absolute positioning
+--------------------
+1-normal flow : default positioning of elements or by using (position:relative)
+2-absolute positioning : element is removed from normal flow and positioned relative to its nearest positioned ancestor (if ancestor has position:relative) or relative to the whole page,
+the element doesn't affect or get affected by anything around it and stays in its specified position always
+
+properties enabled for use at position absolute
+1-top:move element away from top by (n)
+2-right
+3-bottom
+4-left
+*/
+/*
+pseudo elements
+---------------
+non real html elements created by css like first letter or first line
+examples
+1-element::first-letter{....}
+2-element::first-line{....}
+3-element::after or element::before: they need the most important property (content: "can be empty or a string";) that needs to be written always and they are inline
+*/
+/*
+some general properties
+-----------------------
+1-background color
+2-border:specify border thickness,color,style and has multiple ways to write
+3-position:specify the position of element (relative,absolute,...)
+*/
+/*
+some good practice tips
+-----------------------
+1-always write a global reset
+2-when dealing with margins just to create vertical space stick to margin top or bottom not both and margin bottom is better
+3-always have a big container and work inside it not inside the body directly
+4-better not to specify a height for an element
+5-in most cases we leave the element with its default box type (inline,inline block,block) unless the change is needed
+6-if you used position absolute for an element we better have a parent to that element with position relative so positioning is done right
+*/
+/*v43*/
