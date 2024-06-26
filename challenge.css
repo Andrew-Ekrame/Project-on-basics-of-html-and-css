@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: sans-serif;
@@ -107,4 +108,29 @@ article::before {
 }
 .brown {
   background-color: brown;
+}
+.shipping {
+  float: right;
+  margin-top: 8px;
+}
+.price {
+  float: left;
+}
+.clearfix {
+  clear: both;
+  margin-bottom: 10px;
+}
+img {
+  float: left;
+}
+/* width calculations ->  (825-8-250-80)/2=243px*/
+.description {
+  float: left;
+  width: 243px;
+  margin: 0 40px;
+  margin-top: 15px;
+}
+.details {
+  float: left;
+  width: 243px;
 }

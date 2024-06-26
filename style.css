@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   color: #444;
@@ -18,7 +19,7 @@ li {
   color: #444;
 }
 .container {
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
 }
 .main-header {
@@ -39,8 +40,7 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
 }
 h1,
 h2,
@@ -66,6 +66,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 p {
   font-size: 22px;
@@ -97,6 +98,7 @@ li:last-child {
 }
 .related-posts {
   list-style: none;
+  margin-left: 0;
 }
 li:first-child {
   font-weight: bold;
@@ -125,6 +127,13 @@ a:active {
 }
 .post-author {
   width: 50px;
+  float: left;
+  margin-bottom: 20px;
+}
+.author {
+  margin-left: 20px;
+  margin-top: 10px;
+  float: left;
 }
 nav a:link {
   margin-right: 30px;
@@ -163,6 +172,32 @@ h2::after {
   position: absolute;
   right: -25px;
   top: -15px;
+}
+/* to be deleted */
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+article {
+  /* background-color: green; */
+  width: 825px;
+  float: left;
+}
+aside {
+  /* background-color: red; */
+  width: 300px;
+  float: right;
+}
+footer {
+  /* background-color: yellow; */
+  clear: both;
 }
 /*
 styling text
@@ -233,9 +268,10 @@ some properties of box model
 6-min height
 7-max width
 8-max height
+9-box sizing:specify how the dimensions of the box are calculated as border-box or content-box
 
 types of boxes
-1-inline:has the block properties but on horizontal directions only not verticaly
+1-inline:has the block properties but on horizontal directions only not vertically
 2-inline block:it behaves like inline from outside(with other elements) and behaves as block from inside(with its content)
 3-block:normal block with width,height,(padding,margin) in all directions
 notes
@@ -264,6 +300,36 @@ examples
 3-element::after or element::before: they need the most important property (content: "can be empty or a string";) that needs to be written always and they are inline
 */
 /*
+float layout (outdated)
+-----------------------
+1-using the property float:left or float:right and the other elements will float around it while its out of the flow of page
+2-when we make an element float we remove it from the flow so if it has a parent for example the parent's height will be affected
+3-to clear float we need a new element with the property clear: [both or right or left]
+*/
+/*
+flexbox
+-------
+used for 1 dimensional layout
+consists of parent(layout) and children(elements affected by layout)
+
+properties for parent(flex container)
+1-display:flex : to make element has a flex layout
+2-align-items:center,flex-start,flex-end,stretch,.... :used to align children vertically on cross axis
+3-justify-content:center,flex-start,flex-end,stretch,.... :used to align children horizontally on main axis
+4-gap:create space between items without margin
+5-flex-direction:row,column,row-reverse,column-reverse : used to specify the main axis direction
+6-flex-wrap:nowrap,wrap,wrap-reverse : allow items to wrap into new line if they are too large
+7-align-content:stretch,center,..... : only applies when there are multiple lines
+
+properties for children(flex items)
+1-align-self :to overwrite (align-items) property for individual item
+2-flex-grow:integer number : to allow element to grow (0 means no , 1>=means yes)
+3-flex-shrink:integer number : to allow element to shrink (0 means no , 1>=means yes)
+4-flex-basis: in px,rem,.... :define item width instead of (width property)
+5-flex:int int length : shorthand for flex-grow,flex-shrink,flex-basis
+6-order:int :specify order of items (-1 makes item first , 1 makes item last)
+*/
+/*
 some general properties
 -----------------------
 1-background color
@@ -280,4 +346,4 @@ some good practice tips
 5-in most cases we leave the element with its default box type (inline,inline block,block) unless the change is needed
 6-if you used position absolute for an element we better have a parent to that element with position relative so positioning is done right
 */
-/*v43*/
+/*v52*/
