@@ -80,12 +80,13 @@ article::before {
 }
 .colors-container {
   margin: 20px 0;
+  display: flex;
+  gap: 15px;
 }
 .inline-block {
-  display: inline-block;
   width: 22px;
   height: 22px;
-  margin-right: 10px;
+  margin-right: 0px;
   background-color: #444;
 }
 .colors-container:last-child {
@@ -109,28 +110,22 @@ article::before {
 .brown {
   background-color: brown;
 }
-.shipping {
-  float: right;
-  margin-top: 8px;
-}
-.price {
-  float: left;
-}
-.clearfix {
-  clear: both;
-  margin-bottom: 10px;
-}
-img {
-  float: left;
-}
-/* width calculations ->  (825-8-250-80)/2=243px*/
+
 .description {
-  float: left;
-  width: 243px;
-  margin: 0 40px;
-  margin-top: 15px;
+  flex: 1;
+  margin-top: 20px;
 }
 .details {
-  float: left;
-  width: 243px;
+  flex: 1;
+  margin-top: 20px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.gap--40 {
+  gap: 40px;
+}
+.shipping {
+  margin-bottom: 0;
 }
