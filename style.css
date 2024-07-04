@@ -369,6 +369,9 @@ some general properties
 1-background color
 2-border:specify border thickness,color,style and has multiple ways to write
 3-position:specify the position of element (relative,absolute,...)
+4-box-shadow: x-offset(px) y-offset(px) blur(px) scale(px , optional) color
+5-text-shadow: same as box-shadow but for text
+6-border-radius: works like border
 */
 /*
 some good practice tips
